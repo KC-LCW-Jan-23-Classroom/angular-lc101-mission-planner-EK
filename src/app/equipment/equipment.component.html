@@ -1,4 +1,9 @@
 <h3>Equipment</h3>
 <ul>
-  <li *ngFor="let item in equipment">{{item.name}}</li>
+  <li *ngFor="let piece of equipment">{{piece.type}}
+    <button (click)="remove(piece)">remove</button>
+  </li>
 </ul>
+<label>Name of Equipment:<input #type type="text"/></label><br>
+<label>Weight of Equipment:<input #weightKG type="text"/></label>
+<button (click)="add(type.value, weightKG.value)">Add</button>
