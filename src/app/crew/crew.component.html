@@ -3,11 +3,12 @@
   <span *ngIf="memberBeingEdited !== member; else editMemberBlock">
   <span (click)="edit(member)" class="editable-text">{{member.name}}</span>
   <span *ngIf="member.firstMission">- 1st</span>
-  <button (click)="remove(member)">remove</button>
+
 </span>
 <ng-template #editMemberBlock>
   <input #updatedMember (keyup.enter)="save(updatedMember.value, member)" value="{{memberBeingEdited.name}}"/>
   <button (click)="save(updatedMember.value, member)">save</button>
+  <button (click)="remove(member)">remove</button>
 </ng-template>
 </li>
 <input #name type="text"/>
